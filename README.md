@@ -1,3 +1,15 @@
+If encounter errors:   
+#1
+File "/home/teresa/anaconda3/envs/py37/lib/python3.7/site-packages/torchvision/transforms/functional.py", line 57, in to_tensor
+    img = torch.from_numpy(pic.transpose((2, 0, 1)))
+change to 
+    img = torch.from_numpy(pic.transpose((2, 0, 1)).copy())
+
+#2
+RuntimeError: Found 0 files in subfolders of: ./datasets/IMAGENET/ILSVRC2012/train
+Supported extensions are: .jpg,.jpeg,.png,.ppm,.bmp,.pgm,.tif,.tiff,.webp
+Then put some images in the subfolder
+
 ## *Unsupervised Representation Learning by Predicting Image Rotations*
 
 ### Introduction
